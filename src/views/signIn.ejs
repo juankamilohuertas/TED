@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/forms/signIn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/logoTEDSA.png"
+      type="image/x-icon"
+    />
+    <title>Bienvenido a TEDSA</title>
+  </head>
+
+  <body>
+    <div class="container-form sign-up">
+      <div class="welcome-back">
+        <div class="message">
+          <h2>Bienvenido/a TEDSA</h2>
+          <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+          <button class="sign-up-btn" style="padding: 4px">
+            <a href="/" style="display: flex"
+              ><img src="/assets/logoTEDSA.png" width="40" alt="logoTEDSA"
+            /></a>
+          </button>
+        </div>
+      </div>
+      <div
+        style="
+          background-color: rgba(207, 34, 34, 0.63);
+          height: 30px;
+          padding: 6px 10px;
+        "
+      >
+        <% if (message != "") { %>
+        <div class="alert alert-danger" role="alert"><%= message %></div>
+        <% } %>
+      </div>
+      <form action="/signIn" method="post" class="formulario">
+        <h2 class="create-account">Inicia Sesion</h2>
+        <div class="iconos" style="margin-bottom: 50px">
+          <div class="border-icon">
+            <i class="bx bxl-instagram"></i>
+          </div>
+          <div class="border-icon">
+            <i class="bx bxl-linkedin"></i>
+          </div>
+          <div class="border-icon">
+            <i class="bx bxl-facebook-circle"></i>
+          </div>
+        </div>
+
+        <input
+          style="padding: 10px"
+          name="email"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          style="padding: 10px"
+          name="password"
+          type="password"
+          placeholder="Contraseña"
+        />
+        <input type="submit" id="btnLogin" value="Iniciar Sesión" />
+        <a style="color: rgb(192, 242, 255);" href="/signUp">¿No tienes cuenta? Crear Cuenta</a>
+      </form>
+    </div>
+    <script src="/public/forms/signIn.js"></script>
+  </body>
+</html>

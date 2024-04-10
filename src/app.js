@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import morgan from "morgan";
-
 import customerRoutes from "./routes/customer.routes.js";
 import { fileURLToPath } from "url";
 
@@ -14,6 +13,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // middlewares
+app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
